@@ -14,11 +14,13 @@ Sample application to demonstrate how to **develop** an **API service**
 - assignment-content
 
 ***URLs***
-- leggere tutti gli assignment (GET - /assignment)
-- leggere tutti gli assignment di uno student ID  	(GET - /assignment?studentid=:id)
-- leggere uno specifico assignment 					(GET - /assignment/:id)
+- leggere tutti gli assignment 						(GET  - /assignment)
 - consegnare un assignment 							(POST - /assignment/)
-- modificare assignment 								(PUT - /assignment/:id)
+
+- leggere tutti gli assignment di uno student ID  	(GET  - /assignment?studentid=:id)
+
+- leggere uno specifico assignment 					(GET  - /assignment/:id)
+- modificare assignment 							(PUT  - /assignment/:id)
 - rimuovere assignment 								(DELETE - /assignment/:id)
 
 ***More details***

@@ -1,18 +1,7 @@
 const Db = require("../models/db.js");
 const assignment = require("../models/assignment.js");
 
-exports.sendAssignmentById = function (req, res) {
-	var new_id = Db.getAll.length;
-	var new_obj;
-	assignmentId = new_id;
-	studentId = req.body.studentId;
-	assignmentType = req.body.assignment_type;
-	assignmentContent= req.body.assignment_content;
- 	new_obj = new assignment(assignmentId, studentId, assignmentType, assignmentContent);
- 	//console.log("NODE: " + JSON.stringify(new_obj));
-	Db.insert(new_obj);
-	return res.json({message: 'Assignment aggiunto'});
-};
+//assignment
 
 exports.getAllAssignments = function(req, res) {
 	var all = Db.getAll();
@@ -31,6 +20,21 @@ exports.getAllAssignments = function(req, res) {
 		return res.json(all);
 	}
 };
+
+exports.sendAssignmentById = function (req, res) {
+	var new_id = Db.getAll.length;
+	var new_obj;
+	assignmentId = new_id;
+	studentId = req.body.studentId;
+	assignmentType = req.body.assignment_type;
+	assignmentContent= req.body.assignment_content;
+ 	new_obj = new assignment(assignmentId, studentId, assignmentType, assignmentContent);
+ 	//console.log("NODE: " + JSON.stringify(new_obj));
+	Db.insert(new_obj);
+	return res.json({message: 'Assignment aggiunto'});
+};
+
+//assignment/:id
 
 exports.getAssignmentById = function(req, res) {
 	var id = req.params.id;

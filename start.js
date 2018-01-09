@@ -1,6 +1,6 @@
 /*
     Project: Sample API for manage student assignments
-    Author: lorenzomasciullo@outlook.it
+    Author: stefano.leonardi-2@studenti.unitn.it
 */
 
 const express   = require("express"),
@@ -25,17 +25,20 @@ app.use(function (req, res, next) {
 	next();
 });
 
-// Set the port no
+// Set the port number
 app.set("port", process.env.PORT || 3000);
 
+// routing
 assignmentRouter.route('/')
   .get(assignmentRoutes.getAllAssignments)
   .post(assignmentRoutes.sendAssignmentById);
+  
 assignmentRouter.route('/:id')
   .get(assignmentRoutes.getAssignmentById)
   .put(assignmentRoutes.updateAssignmentById)
   .delete(assignmentRoutes.removeAssignmentById);
 
+// routig prefix
 app.use("/assignment", assignmentRouter);
 
 // Start the service

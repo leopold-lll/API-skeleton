@@ -12,8 +12,12 @@ exports.getById = function(id){
 exports.removeById = function(id){
 	var index = search(id);
 
-	if (index > -1) 
-	    db.splice(index, 1);
+	if (index > -1){
+		db.splice(index, 1);
+	} 
+	/* splice parte dalla posizione index nell'array (se negativo leggo dal fondo), 
+	il numero seguente indica quanti elementi rimuovere, se ho 0 vado ad aggiugere
+	3°, 4°, ... elemento sono le parti che aggiungo se al 2° posto ho 0 */
 };
 
 exports.insert = function(node){
@@ -22,14 +26,18 @@ exports.insert = function(node){
 
 exports.updateById = function(id, node){
 	var index = search(id);
-	if(index > -1)
+	if(index > -1){
 		db[index] = node;
+	}
 };
 
 var search = function(id){
 	var index = -1;
-	for(i = 0; i < db.length; i++)
-		if(db[i]["assignmentId"] == id)
+	for(i = 0; i < db.length; i++){
+		if(db[i]["assignmentId"] == id){
 			index = i;
+			break;
+		}
+	}
 	return index;
 }
