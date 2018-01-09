@@ -16,7 +16,7 @@ exports.getAllAssignments = function(req, res) {
 		}
 
 		if(list.length==0){
-			return res.json({message: 'Student Id non trovato'});
+			return res.json({message: 'Student Id (178127) non trovato'});
 		}else{
 			return res.json(list);
 		}
