@@ -31,12 +31,14 @@ app.set("port", process.env.PORT || 3000);
 // routing
 assignmentRouter.route('/')
   .get(assignmentRoutes.getAllAssignments)
-  .post(assignmentRoutes.sendAssignmentById);
+  .post(assignmentRoutes.sendAssignmentById)
+  .delete(assignmentRoutes.deleteAllAssignment);
   
 assignmentRouter.route('/:id')
   .get(assignmentRoutes.getAssignmentById)
   .put(assignmentRoutes.updateAssignmentById)
   .delete(assignmentRoutes.removeAssignmentById);
+  
 
 // routig prefix
 app.use("/assignment", assignmentRouter);

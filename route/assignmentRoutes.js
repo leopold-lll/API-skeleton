@@ -16,6 +16,7 @@ exports.getAllAssignments = function(req, res) {
 		}
 
 		if(list.length==0){
+
 			return res.json({message: 'Student Id non trovato'});
 		}else{
 			return res.json(list);
@@ -38,7 +39,8 @@ exports.sendAssignmentById = function (req, res) {
 
  	console.log("add NODE: " + JSON.stringify(new_obj));
 	Db.insert(new_obj);
-	return res.json({message: 'Assignment aggiunto'});
+	return res.sendStatus(200);
+	//return res.json({message: 'Assignment aggiunto'});
 };
 
 //assignment/:id
@@ -80,4 +82,10 @@ exports.updateAssignmentById = function(req, res) {
 	} else {
 		return res.json({message: 'Assignment non trovato'});
 	}
+};
+
+exports.deleteAllAssignment = function(req, res) {
+	console.log("\nfunzione deleteAllAssignment");
+	Db.drop();
+	return res.sendStatus(200);
 };

@@ -13,6 +13,11 @@ exports.getById = function(id){
 	return db[search(id)];
 };
 
+exports.drop = function(){
+	db = [];
+	db.length = 0;
+};
+
 exports.removeById = function(id){
 	var index = search(id);
 
