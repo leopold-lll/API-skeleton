@@ -14,8 +14,7 @@ exports.getById = function(id){
 };
 
 exports.drop = function(){
-	db = [];
-	db.length = 0;
+	db.splice(0, db.length);
 };
 
 exports.removeById = function(id){

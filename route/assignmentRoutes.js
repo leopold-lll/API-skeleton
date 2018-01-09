@@ -33,8 +33,8 @@ exports.sendAssignmentById = function (req, res) {
 
 	assignmentId = new_id;
 	studentId = req.body.studentId;
-	assignmentType = req.body.assignment_type;
-	assignmentContent= req.body.assignment_content;
+	assignmentType = req.body.assignmentType;
+	assignmentContent= req.body.assignmentContent;
  	new_obj = new assignment(assignmentId, studentId, assignmentType, assignmentContent);
 
  	console.log("add NODE: " + JSON.stringify(new_obj));
