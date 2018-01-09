@@ -11,6 +11,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Lorenzo Masciullo",
-  "license": "ISC"
+  "author": "Stefano Leonardi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leopold-lll/API-skeleton.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leopold-lll/API-skeleton/issues"
+  },
+  "homepage": "https://github.com/leopold-lll/API-skeleton#readme"
 }
