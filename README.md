@@ -14,9 +14,8 @@ Sample application to demonstrate how to **develop** an **API service**
 - assignment-content
 
 ***URLs***
+- consegnare un assignment 							(POST - /assignment)
 - leggere tutti gli assignment 						(GET  - /assignment)
-- consegnare un assignment 							(POST - /assignment/)
-
 - leggere tutti gli assignment di uno student ID  	(GET  - /assignment?studentid=:id)
 
 - leggere uno specifico assignment 					(GET  - /assignment/:id)

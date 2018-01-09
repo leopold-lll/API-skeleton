@@ -1,6 +1,10 @@
 const assignment = require("./assignment.js");
 const db = new Array();
 
+exports.length = function(){
+	return db.length;
+};
+
 exports.getAll = function(){
 	return db;
 };
