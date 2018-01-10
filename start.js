@@ -9,6 +9,20 @@ const express   = require("express"),
 	assignmentRouter  = express.Router(),
 	assignmentRoutes  = require("./route/assignmentRoutes.js")
 
+
+// middleware route to support CORS and preflighted requests
+app.use(function (req, res, next) {
+  //Enabling CORS
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  if (req.method == 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'PUT, DELETE');
+    return res.status(200).json({});
+  }
+next();
+});
+
+
 // Body-parser (To parse the request body)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,8 +39,8 @@ app.use(function (req, res, next) {
 	next();
 });
 
-// Set the port number
-app.set("port", process.env.PORT || 3000);
+// routig prefix
+app.use("/assignment", assignmentRouter);
 
 // routing
 assignmentRouter.route('/')
@@ -40,9 +54,23 @@ assignmentRouter.route('/:id')
   .delete(assignmentRoutes.removeAssignmentById);
   
 
-// routig prefix
-app.use("/assignment", assignmentRouter);
+// pagine interne
+app.get("/", function(req, res){
+  console.log("Pagina principale");
+  res.sendFile(__dirname+"/front-end/index.html");
+})
+
+app.get("/pippo.html", function(req, res){
+  console.log("Pippo");
+  res.sendFile(__dirname+"/front-end/pippo.html");
+})
+
+
+// Set the port number
+app.set("port", process.env.PORT || 3000);
 
 // Start the service
-app.listen(app.get("port"));
-console.log("Sample node server Started @ " + new Date() + " Running on port no: " + app.get("port"));
+app.listen(app.get("port"), function(){
+  console.log("Sample node server Started @ " + new Date() + " Running on port no: " + app.get("port"));
+});
+

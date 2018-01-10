@@ -24,3 +24,6 @@ Sample application to demonstrate how to **develop** an **API service**
 
 ***More details***
 Read Apiary documentation in https://assignmentapi1.docs.apiary.io/
+
+***Waffle -> user story***
+https://waffle.io/leopold-lll/API-skeleton

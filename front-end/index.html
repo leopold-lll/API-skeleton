@@ -2,11 +2,44 @@
 <meta charset="utf-8"/>
 <html>
 	<head>
+		<title>Front-end</title>
+		<!--include CSS-->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<title>Title</title>
 	</head>
 	<body>
 		<h1>front-end</h1>
-		<p>qui andrà inserita l'interfaccia con l'utente</p>
+		<p>Interfaccia utente:</p>
+		<input type="button" value="Refresh Page" onClick="window.location.reload()"><br/><br/>
+		
+		<button type="submit" onclick="callGET('get1')">GET ALL</button><br/>
+		<textarea rows="6" cols="150" id="get1"    disabled placeholder="output ... "></textarea><br/><br/>
+		
+		<button type="submit" onClick="callGETone('get2')">GET ONE</button>
+		studentId:<input type="text" id="get2a"><br/>
+		<textarea rows="6" cols="150" id="get2"    disabled placeholder="output ... "></textarea><br/><br/>
+
+		<button type="submit" onclick="callPOST('post1')">POST</button><br/>
+		assignmentId:<input type="text" id="post1a"><br/>
+		assignmentType:<input type="text" id="post1b"><br/>
+		assignmentContent:<input type="text" id="post1c"><br/>
+		<textarea rows="6" cols="150" id="post1"   disabled placeholder="output ... "></textarea><br/><br/>
+
+		<button type="submit" onclick="callPUT('put1')">PUT</button><br/>
+		studentId:<input type="number" id="put1a"><br/>
+		assignmentId:<input type="text" id="put1b"><br/>
+		assignmentType:<input type="text" id="put1c"><br/>
+		assignmentContent:<input type="text" id="put1d"><br/>
+		<textarea rows="6" cols="150" id="put1"    disabled placeholder="output ... "></textarea><br/><br/>
+
+		<button type="submit" onclick="callDELETE('delete1')">DELETE ALL</button><br/>
+		<textarea rows="6" cols="150" id="delete1" disabled placeholder="output ... "></textarea><br/><br/>
+
+		<button type="submit" onclick="callDELETEone('delete2')">DELETE ONE</button>
+		studentId:<input type="text" id="delete2a"><br/>
+		<textarea rows="6" cols="150" id="delete2" disabled placeholder="output ... "></textarea><br/><br/>
+
+		<br/><br/><br/><br/><br/><br/>
+		<!--include javascript-->
+		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html> 

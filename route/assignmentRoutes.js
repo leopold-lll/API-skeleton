@@ -50,9 +50,10 @@ exports.getAssignmentById = function(req, res) {
 	var id = req.params.id;
 	var element = Db.getById(id);
 	if (element !== undefined){
+		element = [element]
 		return res.json(element);
 	} else {
-		return res.json({message: 'Assignment non trovato'});
+		return res.sendStatus(400);
 	}
 };
 
@@ -71,15 +72,20 @@ exports.removeAssignmentById = function(req, res) {
 exports.updateAssignmentById = function(req, res) {	
 	console.log("\nfunzione updateAssignmentById");
 	var id = req.params.id;
+	console.log("id: " + id);
 	var found = Db.getById(id);
+	console.log("A");
 	if (found !== undefined){
+	console.log("b");
 		studentId = req.body.studentId;
-		assignmentType = req.body.assignment_type;
-		assignmentContent= req.body.assignment_content;
+		assignmentType = req.body.assignmentType;
+		assignmentContent= req.body.assignmentContent;
 		obj = new assignment(id, studentId, assignmentType, assignmentContent);
+		console.log(JSON.stringify(obj))
 		Db.updateById(id, obj);
 		return res.json({message: 'Assignment ' + id + ' aggiornato'});
 	} else {
+	console.log("c");
 		return res.json({message: 'Assignment non trovato'});
 	}
 };
