@@ -11,6 +11,7 @@ const express   = require("express"),
 
 
 // middleware route to support CORS and preflighted requests
+// cors abilita put e delete con fetch tramite javascript
 app.use(function (req, res, next) {
   //Enabling CORS
   res.header('Access-Control-Allow-Origin', '*');
@@ -58,11 +59,6 @@ assignmentRouter.route('/:id')
 app.get("/", function(req, res){
   console.log("Pagina principale");
   res.sendFile(__dirname+"/front-end/index.html");
-})
-
-app.get("/pippo.html", function(req, res){
-  console.log("Pippo");
-  res.sendFile(__dirname+"/front-end/pippo.html");
 })
 
 
