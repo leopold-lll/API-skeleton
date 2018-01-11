@@ -58,8 +58,12 @@ assignmentRouter.route('/:id')
 // pagine interne
 app.get("/", function(req, res){
   console.log("Pagina principale");
-  var link = __dirname+"/docs/index.html";
-  res.sendFile(link);
+  // uso le github pages per il front-end 
+  // prendono i file html, css, js dalla cartella docs
+  res.redirect("https://leopold-lll.github.io/API-skeleton/");
+  
+  // funzionerebbe ma non tramite github pages, non può essere hostato su heroku
+  //res.sendFile("");
 })
 
 
