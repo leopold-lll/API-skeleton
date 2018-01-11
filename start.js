@@ -58,7 +58,8 @@ assignmentRouter.route('/:id')
 // pagine interne
 app.get("/", function(req, res){
   console.log("Pagina principale");
-  res.sendFile(__dirname+"/front-end/index.html");
+  var link = __dirname+"/docs/index.html";
+  res.sendFile(link);
 })
 
 
