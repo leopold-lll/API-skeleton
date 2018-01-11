@@ -2,7 +2,7 @@
 Sample application to demonstrate how to **develop** an **API service**
 
 ### Steps to start the application
-- git clone https://github.com/lore-masc/API-skeleton.git
+- git clone https://github.com/leopold-lll/API-skeleton.git
 - npm install
 - node start.js
 

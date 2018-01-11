@@ -1,0 +1,116 @@
+#https://app.apiary.io/template31/editor
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "Template"
+  description: description of API
+  termsOfService: waffle_link
+  contact:
+    name: Stefano Leonardi
+    email: stefano.leonardi-2@studenti.unitn.it
+host: heroku_link
+basePath: /basePath/
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /q/{q_id}:  
+    get:
+      description: descrizione
+      operationId: take q
+      parameters:
+        - name: q_id
+          in: path
+          description: descrizione_parametro
+          required: true
+          type: string
+        - name: x_id
+          in: query
+          description: descrizione_parametro
+          required: false
+          type: integer
+        - name: pippo
+          in: body
+          description: descrizione_parametro
+          required: true
+          schema: 
+              $ref: '#/definitions/Pippo'
+      responses:
+        200:
+          description: description
+          schema:
+            type: array
+            items: 
+              $ref: '#/definitions/Skeleton'
+            
+  /w:         
+    post:
+      description: |
+        description
+      operationId: post w
+      responses:
+        200:
+          description: ""
+          
+    put:
+      description: |
+        description
+      operationId: put element
+      responses:
+        200:
+          description: w response
+          
+    delete:
+      description: |
+        description
+      operationId: delete all
+      responses:
+        200:
+          description: w response
+
+definitions:  
+
+  Skeleton:   
+    allOf:
+      - $ref: '#/definitions/Pippo'
+    required:
+      - a
+      - c
+    properties:
+      a:
+        type: string
+        enum: ["pluto"]
+      b:
+        type: integer
+        format: int32
+        enum: ["42"]
+      c:
+        type: array
+        items:
+          type: number
+        maxItems: 2
+        minItems: 2
+      
+  Pippo:      
+    required:
+      - d
+    properties:
+      d:
+        type: object
+        required:
+          - e
+          - f
+        properties:
+          e:
+            type: boolean
+            enum: [true]
+          f:
+            type: number
+        
+
+
+
+ 
